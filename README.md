@@ -76,4 +76,4 @@ for details of data structure.
 
 ## Contact Me
 
-[zhenninglang@163.com](zhenninglang@163.com)
+[zhenninglang@163.com](mailto:zhenninglang@163.com)
