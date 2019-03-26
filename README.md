@@ -40,7 +40,7 @@ In addition multiple ports could be configured as
 
 ```python
 # multiple listening port example
-PORTS = (8080, 8081, 8082)
+PORTS = (8080, 8081, 8082,)
 ```
 
 ### Paths
@@ -59,21 +59,21 @@ ip2loc --showpath
 All the data used in this project is from 
 [https://lite.ip2location.com/database/ip-country-region-city-latitude-longitude](https://lite.ip2location.com/database/ip-country-region-city-latitude-longitude).
 
-For the reason that the data on this site updated monthly, you need track the latest data manually.
+For the reason that the data on this site are updated monthly, you need track the latest data manually.
 
 - Download "IPV4CSV" and remember the current version of data
 ![IP2LocationSiteSnapshot](docs/images/IP2LocationLite.png)
 
-- Run `ip2loc --loaddata --dataver="current version" --datapath="CSV/DATA/PATH/NAME.ZIP"`
+- Run `ip2loc --loaddata --dataver="current version" --csv="CSV/DATA/PATH/NAME.CSV"` or `ip2loc --loaddata --dataver="current version" --zip="ZIP/DATA/PATH/NAME.ZIP"`
 
 
-## How it Works
+## How This Works
 
-Shortly: binary search of ordered data
+Briefly: Binary search of ordered ip data
 
 See [https://lite.ip2location.com/database/ip-country-region-city-latitude-longitude](https://lite.ip2location.com/database/ip-country-region-city-latitude-longitude) 
 for details of data structure.
 
 ## Contact Me
 
-zhenninglang@163.com
+[zhenninglang@163.com](zhenninglang@163.com)
