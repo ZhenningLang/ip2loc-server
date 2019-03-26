@@ -34,14 +34,19 @@ to test the server is working well. Run `ip2loc -h` for more helps.
 ### Server Port
 
 By default the server listens to port `8080`, you could ONLY modify this in the configure file.
-(Arguments specified listened ports are not supported)
+(Arguments specified listening ports are not supported)
 
-In addition multiple ports is also OK in the configure file. 
+In addition multiple ports could be configured as
+
+```python
+# multiple listening port example
+PORTS = (8080, 8081, 8082)
+```
 
 ### Paths
 
 I deliberately do not list the data, configure and log paths in this README file,
-for the reason that the default paths are all relative paths which are not easy to described clearly.
+for the reason that the default paths are all relative paths which are not easy to be described clearly.
 
 To find these useful path info, run
 
