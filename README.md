@@ -10,7 +10,7 @@ A tiny web server for ipv4 to geo location conversion
 
 ## Quick Start
 
-### Installation & Start
+### Installation & Run
 
 ```bash
 pip install --user ip2loc-server
@@ -29,18 +29,25 @@ curl localhost:8080/url2loc?url=https://www.google.com
 # {"ip": "216.58.221.228", "country_code": "NL", "country_name": "Netherlands", "region_name": "Noord-Holland", "city_name": "Amsterdam", "latitude": 52.37403, "longitude": 4.88969}
 ```
 
-to test the server is working well ^_^. 
+to test the server is working well. Run `ip2loc -h` for more helps.
 
-By default the server listens to port `8080`, you could ONLY modify this in the configure file. 
+### Server Port
+
+By default the server listens to port `8080`, you could ONLY modify this in the configure file.
 (Arguments specified listened ports are not supported)
 
-To find paths info, run
+In addition multiple ports is also OK in the configure file. 
+
+### Paths
+
+I deliberately do not list the data, configure and log paths in this README file,
+for the reason that the default paths are all relative paths which are not easy to described clearly.
+
+To find these useful path info, run
 
 ```bash
 ip2loc --showpath
 ```
-
-Run `ip2loc -h` for help.
 
 ## Track the Latest Data
 
