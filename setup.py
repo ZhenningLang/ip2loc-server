@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ip2loc_server",
-    version="0.0.1.dev1",
+    version="0.0.1",
     author="ZhenningLang",
     author_email="zhenninglang@163.com",
     description="A tiny web server for ipv4 to geo location conversion",

@@ -13,7 +13,7 @@ A tiny web server for ipv4 to geo location conversion
 ### Installation & Run
 
 ```bash
-pip install --user ip2loc-server
+pip install --user ip2loc_server
 ip2loc
 ```
 
