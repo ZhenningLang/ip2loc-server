@@ -1,6 +1,7 @@
 import argparse
 import importlib.util
 import logging
+from logging.handlers import TimedRotatingFileHandler
 import os
 
 from art import text2art
@@ -67,7 +68,8 @@ def setup_logger():
             err = e
         finally:
             if os.path.isdir(log_path):
-                handlers.append(logging.FileHandler(CONFIG.LOGGING.LOG_FILE_LOC))
+                handlers.append(
+                    TimedRotatingFileHandler(CONFIG.LOGGING.LOG_FILE_LOC, when='midnight', backupCount=7))
 
     logging.basicConfig(level=CONFIG.LOGGING.LOG_LEVEL, format=CONFIG.LOGGING.LOG_FORMAT, handlers=handlers)
     if len(handlers) == 1:
