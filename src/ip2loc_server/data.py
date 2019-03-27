@@ -118,14 +118,18 @@ def load_data(csv_path_name: str, zip_path_name: str, sqlite_path_name: str,
             os.rename(sqlite_bak_path_name, sqlite_path_name)
         else:  # no backup file means its the first time loading data
             os.remove(sqlite_path_name)
-            logging.fatal(f'First time data loading error', exc_info=True)
+            logging.fatal(f'First time sqlite db initial from csv error', exc_info=True)
             exit(3)
         logging.error(repr(e), exc_info=True)
     else:  # del backup sqlite db
         logging.info('CSV to SQLITE success.')
         if os.path.exists(sqlite_bak_path_name) and os.path.isfile(sqlite_bak_path_name):
-            os.remove(sqlite_bak_path_name)
-        logging.debug(f"Backup database '{sqlite_bak_path_name} has been deleted.")
+            # noinspection PyBroadException
+            try:
+                os.remove(sqlite_bak_path_name)
+                logging.debug(f"Backup database '{sqlite_bak_path_name} has been deleted.")
+            except Exception as e:
+                logging.error(f"Try to remove backup database '{sqlite_bak_path_name} error: {e}", exc_info=True)
         _update_version(specified_version=specified_version)
         logging.debug('Version file updated success.')
     finally:
