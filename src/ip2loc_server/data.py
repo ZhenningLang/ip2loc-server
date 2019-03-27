@@ -8,11 +8,10 @@
 import logging
 import os
 import re
-import sys
 
 import requests
 
-from util import unzip as do_unzip
+from .util import unzip as do_unzip
 
 DATA_PAGE_URL = 'https://lite.ip2location.com/database/ip-country-region-city-latitude-longitude'
 DATA_DOWNLOAD_URL = 'https://lite.ip2location.com/download?db=db5&type=csv&version=4'

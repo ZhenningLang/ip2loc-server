@@ -62,7 +62,7 @@ All the data used in this project is from
 For the reason that the data on this site are updated monthly, you need track the latest data manually.
 
 - Download "IPV4CSV" and remember the current version of data
-![IP2LocationSiteSnapshot](docs/images/IP2LocationLite.png)
+![IP2LocationSiteSnapshot](https://raw.githubusercontent.com/ZhenningLang/ip2loc-server/master/docs/images/IP2LocationLite.png)
 
 - Run `ip2loc --loaddata --dataver="current version" --csv="CSV/DATA/PATH/NAME.CSV"` or `ip2loc --loaddata --dataver="current version" --zip="ZIP/DATA/PATH/NAME.ZIP"`
 

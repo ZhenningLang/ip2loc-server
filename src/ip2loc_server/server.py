@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 import tornado.ioloop
 import tornado.web
 
-from ip2loc import ip2loc
+from .ip2loc import ip2loc
 
 
 db_conn = None
