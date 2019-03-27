@@ -2,6 +2,7 @@
 
 import logging
 from multiprocessing import Process
+import os
 import socket
 import sqlite3
 from urllib.parse import urlparse
@@ -13,6 +14,7 @@ from .ip2loc import ip2loc
 
 
 db_conn = None
+CURRENT_PATH = os.path.split(os.path.realpath(__file__))[0]
 
 
 def init_db_conn(sqlite_path_name):
@@ -46,6 +48,7 @@ def start_tornado_server(port):
     app = tornado.web.Application([
         (r"/ip2loc", IP2LOCHandler),
         (r"/url2loc", Url2LOCHandler),
+        (r'/(favicon.ico)', tornado.web.StaticFileHandler, {"path": os.path.join(CURRENT_PATH, 'data')}),
     ])
     app.listen(port)
     try:
