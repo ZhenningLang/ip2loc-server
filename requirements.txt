@@ -1,3 +1,4 @@
 art
 requests
+sqlalchemy
 tornado
