@@ -38,3 +38,12 @@ def unzip(src: str, dest: str):
         dest = os.path.dirname(dest)
     z_file = ZipFile(src)
     z_file.extractall(dest)
+
+
+def is_good_file(file_path_name):
+    # noinspection PyBroadException
+    try:
+        file_path_name = str(file_path_name)
+        return os.path.isfile(file_path_name) and os.path.getsize(file_path_name) > 0
+    except:  # noqa
+        return False

@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from ip2loc_server import entry
+# from server import entry
+#
+# entry()
 
-entry()
+from cmd_entry import parse_args
+
+if __name__ == '__main__':
+    args = parse_args()
+    print(args)

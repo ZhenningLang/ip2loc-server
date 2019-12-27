@@ -24,8 +24,8 @@ try:
     current_version = open(VERSION_FILE_PATH_NAME, 'r').read().strip()
 except Exception as re:
     current_version = '???'
-    logging.error(
-        f"Read version from file '{VERSION_FILE_PATH_NAME}' fail: {re}", exc_info=True)
+    # logging.error(
+    #     f"Read version from file '{VERSION_FILE_PATH_NAME}' fail: {re}", exc_info=True)
 
 
 def check_data_version() -> bool:
@@ -45,7 +45,7 @@ def check_data_version() -> bool:
         return False
 
 
-def _update_version(specified_version: str=None):
+def _update_version(specified_version: str = None):
     if specified_version:
         # noinspection PyBroadException
         try:

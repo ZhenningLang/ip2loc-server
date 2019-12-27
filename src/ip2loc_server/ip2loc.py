@@ -2,7 +2,7 @@
 
 """
 Core of ip2loc
-Notice: no connection pool for the reason that tornado is signle thread
+Notice: no connection pool for the reason that tornado is single thread
 """
 
 import ipaddress
@@ -15,6 +15,9 @@ total_len = 0
 max_loops = 0
 total_len_update_time = 0
 TOTAL_LEN_UPDATE_INTERVAL = 5 * 60  # 5 min
+
+
+# TODO: Use context module to initial context
 
 
 def ip2int(ip: str) -> int:
@@ -47,6 +50,7 @@ def update_data_length(conn: sqlite3.Connection) -> None:
             cursor.close()
 
 
+# TODO: do url and ip adapter here
 def ip2loc(conn: sqlite3.Connection, ip: str) -> dict:
     """ IPV4 to geo location implementation
     Using binary search
